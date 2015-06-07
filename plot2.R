@@ -8,6 +8,17 @@ Memory_Required
 # Check if "data.csv" exist
 # If not, generate "data.csv" with the following codes
 if(!file.exists("./data.txt")){
+  
+  ## Unzip file and save at working directory
+  if(!file.exists("./household_power_consumption.txt")){
+    household_power_consumption <- read.table(unz("exdata_data_household_power_consumption.zip",
+                                                  "household_power_consumption.txt"), sep = ";", header = T)
+    write.table(household_power_consumption, file = "./household_power_consumption.txt",
+                quote = F, sep = ";", row.names = F)
+    closeAllConnections()
+    rm(household_power_consumption)
+  }
+  
   ## 1. Read the first 10 rows of the dataset
   initial <- read.table("household_power_consumption.txt", sep = ";", header = T, nrows = 10)
   
