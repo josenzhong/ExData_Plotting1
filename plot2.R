@@ -5,8 +5,8 @@ Memory_Required
 ## If you free memory is greater than x, then it is sufficient
 #---------------------------------------------------------------------------------
 
-# Check if "data.csv" exist
-# If not, generate "data.csv" with the following codes
+# Check if "data.txt" exist
+# If not, generate "data.txt" with the following codes
 if(!file.exists("./data.txt")){
   
   ## Unzip file and save at working directory
